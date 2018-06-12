@@ -25,6 +25,7 @@ public class Armstrong {
 			c = c+(a*a*a);
 		}
 		
+		
 		if (temp == c)
 			System.out.println("true");
 		else

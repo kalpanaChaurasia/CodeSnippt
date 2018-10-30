@@ -26,57 +26,52 @@ public class SetExample {
 		listAray.add("Set");
 		listAray.add("Example");
 		
+		if(listAray.contains("Set")) {
+			System.out.println("yes contain");
+		}else {
+			System.out.println("no contain");
+		}
+		
 		Set<String> hash_set = new HashSet<String>();
-//		hash_set.addAll(listAray);
-		hash_set.add("Geeks");
-		hash_set.add("For");
-		hash_set.add("Geeks");
-		hash_set.add("Example");
-		hash_set.add("Set");
-		hash_set.add("Sasdasdsdet");
-		hash_set.add("sdExampadle");
-		
-//		hash_set.retainAll(listAray);
-		
-		System.out.println(hash_set);
-		
-		hash_set.removeAll(listAray);
+		hash_set.addAll(listAray);
 		
 		
-		System.out.println(hash_set);
-		
-//		TreeSet<String> tree_set = new TreeSet<String>();
-//		tree_set.addAll(hash_set);
-//		System.out.println(tree_set);
+		System.out.println("Hashset =>"+hash_set);
 		
 		
-//		
-//		
-//		Set<Integer> a = new HashSet<Integer>();
-//		a.addAll(Arrays.asList(new Integer[] {1, 3, 2, 4, 8, 9, 0}));
-//		
-//		Set<Integer> b = new HashSet<Integer>();
-//		b.addAll(Arrays.asList(new Integer[] {1, 3, 7, 5, 4, 0, 7, 5}));
-//		
-//		//Union
-//		
-//		Set<Integer> unionSet = new HashSet<Integer>(a);
-//		unionSet.addAll(b);
-//		
-//		System.out.print("Union of the two Set");
-//	    System.out.println(unionSet);
-//	    
-//	    Set<Integer> intersection = new HashSet<Integer>(a);
-//	    intersection.retainAll(b);
-//	    
-//	    System.out.print("Intersection of the two Set");
-//        System.out.println(intersection);
-// 
-//        Set<Integer> differences = new HashSet<Integer>(a);
-//        differences.removeAll(b);
-//        
-//        System.out.print("Difference of the two Set");
-//        System.out.println(differences);
+		
+		TreeSet<String> tree_set = new TreeSet<String>();
+		tree_set.addAll(hash_set);
+		System.out.println("Tree set =>"+tree_set);
+		
+		
+		
+		
+		Set<Integer> a = new HashSet<Integer>();
+		a.addAll(Arrays.asList(new Integer[] {1, 3, 2, 4, 8, 9, 0}));
+		
+		Set<Integer> b = new HashSet<Integer>();
+		b.addAll(Arrays.asList(new Integer[] {1, 3, 7, 5, 4, 0, 7, 5}));
+		
+		//Union
+		
+		Set<Integer> unionSet = new HashSet<Integer>(a);
+		unionSet.addAll(b);
+		
+		System.out.print("Union of the two Set");
+	    System.out.println(unionSet);
+	    
+	    Set<Integer> intersection = new HashSet<Integer>(a);
+	    intersection.retainAll(b);
+	    
+	    System.out.print("Intersection of the two Set");
+        System.out.println(intersection);
+ 
+        Set<Integer> differences = new HashSet<Integer>(a);
+        differences.removeAll(b);
+        
+        System.out.print("Difference of the two Set");
+        System.out.println(differences);
 		
 	}
 	

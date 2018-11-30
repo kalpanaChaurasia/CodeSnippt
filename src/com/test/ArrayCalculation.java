@@ -6,6 +6,12 @@ import java.util.List;
 import java.util.Scanner;
 
 public class ArrayCalculation {
+	
+	// input
+//	5
+//	2 3 4 5 6
+	//output
+//	96
 
 	public static void main(String[] args) {
 

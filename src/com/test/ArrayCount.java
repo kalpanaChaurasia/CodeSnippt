@@ -12,27 +12,26 @@ public class ArrayCount {
 		Scanner scanner = new Scanner(System.in);
 		int number = scanner.nextInt();
 		int array[] = new int[number];
-		
-		for(int i=0; i< number; i++){
+
+		for (int i = 0; i < number; i++) {
 			array[i] = scanner.nextInt();
-		
+
 		}
 		int find = scanner.nextInt();
-		
+
 		boolean isFind = false;
-		for(int i=0; i< array.length; i++){
-			if((array[i]+array[i+1]) == find){
+		for (int i = 0; i < array.length; i++) {
+			if ((array[i] + array[i + 1]) == find) {
 				isFind = true;
 				break;
 			}
 		}
-		
-		if(isFind){
+
+		if (isFind) {
 			System.out.print("True");
-		}else{
+		} else {
 			System.out.print("False");
 		}
-		
-		
+
 	}
 }

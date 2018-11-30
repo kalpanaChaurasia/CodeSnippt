@@ -1,6 +1,11 @@
 package com.test;
 
 public class Patterns {
+	
+//	Notes
+//	You should name the loop indexes row and col, NOT i and j, or x and y, or a and b, which are meaningless.
+//	The row and col could start at 1 (and upto size), or start at 0 (and upto size-1). As computer counts from 0, 
+	//it is probably more efficient to start from 0. However, since humans counts from 1, it is easier to read if you start from 1.
 
 	public static void main(String[] args) {
 		// Patern 1

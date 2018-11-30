@@ -4,50 +4,116 @@ import java.io.IOException;
 import java.util.Scanner;
 
 public class jumpWall {
-		static int output1 = 0;
+
+	// Input : heights[] = {11, 11}
+	// X = 10;
+	// Y = 1;
+	// Output : 4
+	// He needs to make 2 jumps for first wall
+	// and 2 jumps for second wall.
+	//
+	// Input : heights[] = {11, 10, 10, 9}
+	// X = 10;
+	// Y = 1;
+	// Output : 5
+
+	static int output1 = 0;
+
 	public static void main(String[] args) throws IOException {
-		Scanner in = new Scanner(System.in);
+		Scanner sc = new Scanner(System.in);
 		int output = 0;
-		int ip1 = Integer.parseInt(in.nextLine().trim());
-		int ip2 = Integer.parseInt(in.nextLine().trim());
-		int ip3_size = 0;
-		ip3_size = Integer.parseInt(in.nextLine().trim());
-		int[] ip3 = new int[ip3_size];
-		int ip3_item;
-		for (int ip3_i = 0; ip3_i < ip3_size; ip3_i++) {
-			ip3_item = Integer.parseInt(in.nextLine().trim());
-			ip3[ip3_i] = ip3_item;
+		int output2 = 0;
+		int x = sc.nextInt();
+		int y = sc.nextInt();
+		int n = sc.nextInt();
+
+		int[] height = new int[n];
+		for (int i = 0; i < n; i++) {
+			height[i] = sc.nextInt();
 		}
-		output = GetJumpCount(ip1, ip2, ip3);
+
+		// output = GetJumpCounts(x, y, n, height);
+		output = jumpcount3(x, y, n, height);
+
 		System.out.println(String.valueOf(output));
+
+		output2 = jumpcount4(x, y, n, height);
+
+		System.out.println(String.valueOf(output2));
 	}
 
-	public static int GetJumpCount(int input1, int input2, int[] input3) {
-		int noOfWalls = input3.length;
-		int[] wallHeights = input3;
-		   while(noOfWalls>0){
-	            output1 = jumpAmount(output1, input1, wallHeights[--noOfWalls], input2);
-	        }
-		   
-//		GetJumpCounts(input1, input2, input3.length, input3);
-		return output1;
+	// Method 2
+	public static void GetJumpCounts(int x, int y, int n, int[] wallHeights) {
+		while (n > 0) {
+			output1 = jumpAmount(output1, x, wallHeights[--n], y);
+		}
 	}
-	
-	public static void GetJumpCounts(int climbUp,int climbDown,int noOfWalls,int[] wallHeights)
-	{
-	        while(noOfWalls>0){
-	            output1 = jumpAmount(output1, climbUp, wallHeights[--noOfWalls], climbDown);
-	        }
-	}   
 
-	private static int jumpAmount(int totalJump, int climbUp, int hight, int climbDown){
-		System.out.println("hight "+hight);
-	    if( hight <= climbUp){
-	        return ++totalJump;
-	    }
-	    else{
-	        hight = hight - (climbUp - climbDown);
-	        return jumpAmount(++totalJump, climbUp, hight, climbDown);
-	    }
+	private static int jumpAmount(int totalJump, int x, int hight, int y) {
+		System.out.println("hight " + hight);
+		if (hight <= x) {
+			return ++totalJump;
+		} else {
+			hight = hight - (x - y);
+			return jumpAmount(++totalJump, x, hight, y);
+		}
+	}
+
+	// Method 3
+	static int jumpcount3(int x, int y, int n, int height[]) {
+		int jumps = 0;
+
+		for (int i = 0; i < n; i++) {
+		
+			
+			if (height[i] <= x) {
+				jumps++;
+				continue;
+			}
+
+			/*
+			 * If height of wall is greater than up move
+			 */
+			int h = height[i];
+			System.out.println(String.valueOf(i) +" : "+ String.valueOf(h) );
+			
+			while (h > x) {
+				jumps++;
+				h = h - (x - y);
+			}
+			jumps++;
+			System.out.println(String.valueOf(jumps));
+		}
+		return jumps;
+	}
+
+	// Method 4
+	static int jumpcount4(int x, int y, int n, int height[]) {
+		int jumps = 0;
+		for (int i = 0; i < n; i++) {
+
+			// Since all heights are
+			// greater than 1, at-least
+			// one jump is always required
+			jumps++;
+
+			// More jumps required if height
+			// is greater than x.
+			if (height[i] > x) {
+				// Since we have already counted
+				// one jump
+				int h = height[i] - (x - y);
+
+				// Remaining jumps
+				jumps += h / (x - y);
+
+				// If there was a remainder greater
+				// than 1. 1 is there to handle cases
+				// like x = 11, y = 1, height[i] = 21.
+				if (h % (x - y) > 1)
+					jumps++;
+			}
+		}
+		return jumps;
 	}
 }

@@ -1,0 +1,21 @@
+As a commander of an army battalion, you have to plan the attack on some enemy cities which are connected by road-network. Before 
+starting the attack, you have information about all the cities and roads connecting them. You can start attack from any city but you 
+must travel from one city to another via roads only. To prevent enemy re-enforcement and block transport through a city, you reach there,
+ destroy it and burn it while leaving behind. This makes it impossible for you to return to a city (via any road) destroyed by you in 
+ past. 
+ Given a list of all the roads (each connecting a pair of cities), you have to tell what is the maximum number of cities that can be 
+ destroyed by the strategy mentioned above. (you can assume that number of cities is 0<=number of cities<=1000 )
+ 
+ Input/Output Specifications Input Specification:
+ 
+ List of all the roads{ list of pairs x#y which denotes that there exists a direct road from city "x" to city "y" } 
+ 
+ Input Specification:
+ The maximum number of cities that can be destroyed
+ 
+ Examples
+ 1,2,3,11,4,12,8,9,10
+
+ Input: {1#2,2#3,1#11,3#11,4#11,4#5,5#6,5#7,6#7,4#12,8#12,9#12,8#10,9#10,8#9}
+ 
+ Output: 9

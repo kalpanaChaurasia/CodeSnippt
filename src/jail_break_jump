@@ -1,0 +1,38 @@
+Jail break In Bhopal (100 Marks)
+An activist, of a banned organisation, plans to escape from Bhopal jail. The activist is basically a monkey man and is able to jump across the wall. He practises to cross a wall. He is able to jump 'X' meters, but because of the slippery wall he falls 'Y' meters after each jump. To escape from jail, he has to cross 'N' number of walls, where height of each wall is given in an array. 
+
+Write a program to find out the total number of jumps he has make, to escape from the Bhopal jail.
+
+
+Input Format
+Your program  need to take 3 integers from STDIN,  where: 
+First line contains an integer depicting X
+Second line contains an integer depicting Y
+Third line contains an integer depicting N(total number of walls) 
+Next N lines contain heights of N walls
+
+
+Constraints
+1<= X <=10^9 
+1<= Y <=10^5
+
+
+Output Format
+Your program should print total number of jumps required to escape.
+
+
+Sample TestCase 1
+Input
+5
+1
+2
+9
+10
+Output
+5
+Explanation
+Here, the activist can jump 5 meters high, but slides down by 1 meters. He has 2 walls to jump and the walls are 9 and 10 meters high respectively.
+
+While crossing the first wall, the activist takes 2 attempts because during the first attempt he jumps 5 meters but slides down by 1 meters since he didn't cross the wall. In the next attempt he jumps 5 more meters from that position and this time he doesn't slide because he crossed the wall in this attempt because 4+5=9 and 9 meters is the actual height of the wall.
+
+Similarly, while crossing the second wall, the activist takes 3 attempts because during his second attempt on this wall, he slides down by 1 meters since 4+5=9 and the height of the wall is 10 meters. During his third attempt, Activist was able to escape from Bhopal Jail.

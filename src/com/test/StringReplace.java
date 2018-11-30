@@ -1,0 +1,14 @@
+package com.test;
+
+public class StringReplace {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		String response = "{\"time_zone\":\"\",\"session_token\":\"abcdefgHijklomopqrstuvwxyz\",\"user_login\":\"abc\",\"user_profile_img\":\"http://jhjhjhj.org/system/photos/62/medium/images.jpg?1462446436\",\"success\":\"0\",\"org_admin\":\"\",\"user_id\":\"62\",\"user_org_id\":\"101\",\"phone_mobile\":\"510-427-9639\",\"user_email\":\"abc@pdmoffice.com\"}";
+		String res = "[{\"Id\":\"c1348733-8444-e811-80c3-000d3a112040\",\"Name\":\"Egg Salad on Wheat Bread\",\"CategoryId\":\"c0348733-8444-e811-80c3-000d3a112040\",\"PrintMessage\":\"Egg Salad on Wheat Bread\",\"Status\":true,\"IsDeleted\":false,\"Category\":\"Alvernia\",\"LayoutId\":null,\"ImagePath\":\"\",\"LocationPermissionRemoved\":false},{\"Id\":\"c3348733-8444-e811-80c3-000d3a112040\",\"Name\":\"Grilled Chicken Caesar Salad (No Croutons)\",\"CategoryId\":\"c0348733-8444-e811-80c3-000d3a112040\",\"PrintMessage\":\"Grilled Chicken Caesar Salad (No Croutons)\",\"Status\":true,\"IsDeleted\":false,\"Category\":\"Alvernia\",\"LayoutId\":580,\"ImagePath\":\"\",\"LocationPermissionRemoved\":false},{\"Id\":\"cf348733-8444-e811-80c3-000d3a112040\",\"Name\":\"Apple Cinnamon Scone\",\"CategoryId\":\"ce348733-8444-e811-80c3-000d3a112040\",\"PrintMessage\":\"Apple Cinnamon Scone\",\"Status\":true,\"IsDeleted\":false,\"Category\":\"Bakery\",\"LayoutId\":380,\"ImagePath\":\"\",\"LocationPermissionRemoved\":false},{\"Id\":\"d0348733-8444-e811-80c3-000d3a112040\",\"Name\":\"Apple/Pecan Cinnamon Muffin\",\"CategoryId\":\"ce348733-8444-e811-80c3-000d3a112040\",\"PrintMessage\":\"Apple/Pecan Cinnamon Muffin\",\"Status\":true,\"IsDeleted\":false,\"Category\":\"Bakery\",\"LayoutId\":382,\"ImagePath\":\"\",\"LocationPermissionRemoved\":false},{\"Id\":\"d3348733-8444-e811-80c3-000d3a112040\",\"Name\":\"Blueberry Scone\",\"CategoryId\":\"ce348733-8444-e811-80c3-000d3a112040\",\"PrintMessage\":\"Blueberry Scone\",\"Status\":true,\"IsDeleted\":false,\"Category\":\"Bakery\",\"LayoutId\":771,\"ImagePath\":\"\",\"LocationPermissionRemoved\":false},{\"Id\":\"1c358733-8444-e811-80c3-000d3a112040\",\"Name\":\"Spicy Buffalo Chicken Wrap\",\"CategoryId\":\"1b358733-8444-e811-80c3-000d3a112040\",\"PrintMessage\":\"Spicy Buffalo Chicken Wrap\",\"Status\":true,\"IsDeleted\":false,\"Category\":\"Sandwiches\",\"LayoutId\":null,\"ImagePath\":\"\",\"LocationPermissionRemoved\":false},{\"Id\":\"6a7ddbc0-6c4f-e811-80c3-000d3a112040\",\"Name\":\"Beef Kimchi Banh Mi\",\"CategoryId\":\"f2348733-8444-e811-80c3-000d3a112040\",\"PrintMessage\":\"Beef Kimchi Banh Mi\",\"Status\":true,\"IsDeleted\":false,\"Category\":\"Basic Sandwich\",\"LayoutId\":null,\"ImagePath\":\"\",\"LocationPermissionRemoved\":false}]"; 
+		String result = res.replaceAll("\\\\", "");
+		System.out.println(result);
+	}
+
+}

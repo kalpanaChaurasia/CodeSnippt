@@ -1,0 +1,12 @@
+HashMap VS TreeMap
+
+
+1. HashMap implements Map interface while TreeMap implements SortedMap interface. A Sorted Map interface is a child of Map.
+
+2. HashMap implements Hashing, while TreeMap implements Red-Black Tree(a Self Balancing Binary Search Tree). Therefore all 
+	differences between Hashing and Balanced Binary Search Tree apply here.
+	
+3. Both HashMap and TreeMap have their counterparts HashSet and TreeSet. HashSet and TreeSet implement Set interface. 
+	In HashSet and TreeSet, we have only key, no value, these are mainly used to see presence/absence in a set. 
+	For above problem, we can’t use HashSet (or TreeSet) as we can’t store counts. 
+	An example problem where we would prefer HashSet (or TreeSet) over HashMap (or TreeMap) is to print all distinct elements in an array.

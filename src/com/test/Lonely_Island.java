@@ -53,7 +53,7 @@ public class Lonely_Island {
 		
 		visited = new ArrayList<>();
 		
-		return 
+		return 0;
 	}
 
 }

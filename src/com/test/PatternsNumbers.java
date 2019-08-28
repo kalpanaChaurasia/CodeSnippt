@@ -6,7 +6,8 @@ import java.util.Scanner;
 
 public class PatternsNumbers {
 
-//	Write 4 programs called NumberPatternX (X = A, B, C, D) that prompts user for the size (a non-negative integer in int); and prints the pattern as shown:
+//	Write 4 programs called NumberPatternX (X = A, B, C, D) that prompts user for the size (a non-negative integer in int); and
+	//prints the pattern as shown:
 //
 //		Enter the size: 8
 //

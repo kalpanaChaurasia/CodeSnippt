@@ -1,11 +1,11 @@
 package com.test;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.Scanner;
 import java.util.Set;
-
 
 //You are given two strings s and t of length n. You can select any two positions (can be from the same or different strings) and 
 //swap the characters at those two positions. You have to perform this operation exactly once in such a way that there exists maximum 
@@ -38,7 +38,6 @@ import java.util.Set;
 //Explanation
 //In the first test case, we can get a valid result by swapping the characters  and  (1 based indexing).
 
-
 public class SwappingPositions {
 
 	public static void main(String[] args) {
@@ -49,21 +48,136 @@ public class SwappingPositions {
 			return;
 		}
 
-		for (int i = 0; i < T; i++) {
+		for (int k = 0; k < T; k++) {
 			int n = s.nextInt();
-
 			String val1 = s.next();
-
 			String val2 = s.next();
-
-			// One way
-			// System.out.println(areMetaString(n, val1, val2) ? "Yes" : "No");
-
-		
-			//System.out.println(areMetaString2(n, val1, val2) ? "Yes" : "No");
+			System.out.println(areMetaStringNew(n, val1, val2) ? "Yes" : "No");
 		}
 		
-		
+		// for (int i = 0; i < indexs.size(); i++) {
+		// for (int j = i + 1; j < indexs.size(); j++) {
+		// if (first[indexs.get(i)] == first[indexs.get(j)]) {
+		// c1++;
+		// }
+		//
+		// if (sec[indexs.get(i)] == sec[indexs.get(j)]) {
+		// c2++;
+		// }
+		// }
+		// }
+
+
+
+	}
+
+	public static void swap(char S, char T) {
+
+	}
+
+	private static boolean areMetaStringNew(int n, String val1, String val2) {
+		if (val1.length() != val2.length()) {
+			return false;
+		}
+
+		char[] first = val1.toCharArray();
+		char[] sec = val2.toCharArray();
+
+		ArrayList<Integer> indexs = new ArrayList<>();
+		for (int i = 0; i < first.length; i++) {
+			if (first[i] != sec[i]) {
+				indexs.add(i);
+			}
+		}
+
+		if (indexs.size() > 3) {
+			return false;
+		} else {
+			if (indexs.size() <= 1) {
+				return true;
+			} else {				
+				int c1 = 0, c2 = 0, c3 = 0;
+				for (int i = 0; i < indexs.size(); i++) {
+					System.out.println(""+indexs.get(i));
+					for (int j = i; j < indexs.size(); j++) {
+						if (first[indexs.get(i)] == sec[indexs.get(j)]) {
+							c3++;
+						}
+						if (j < indexs.size()-1) {
+							if (first[indexs.get(i)] == first[indexs.get(j + 1)]) {
+								c1++;
+							}
+
+							if (sec[indexs.get(i)] == sec[indexs.get(j + 1)]) {
+								c2++;
+							}
+						}
+					}
+				}	
+				
+				System.out.println("c1 "+c1);
+				System.out.println("c2 "+c2);
+				System.out.println("c3 "+c3);
+
+				if ((c1 == c2 && c1 != 0 && c2 != 0) || c3 == indexs.size()-1) {
+					return true;
+				} else {
+					return false;
+				}
+
+			}
+		}
+	}
+
+	private static boolean editDist(char[] first, char[] sec, int i, int j) {
+		int count = 0;
+		if (first[i] != sec[j]) {
+			count++;
+		}
+		if (first[i] != first[j]) {
+			count++;
+		}
+		if (count > 1) {
+			return editDist(first, sec, j, i);
+		}
+		return true;
+	}
+
+	private static boolean areMetaString3(int n, String val1, String val2) {
+		if (val1.length() != val2.length()) {
+			return false;
+		}
+
+		char[] first = val1.toCharArray();
+		char[] sec = val2.toCharArray();
+
+		HashMap<Integer, Character> map = new HashMap<>();
+		for (int i = 0; i < first.length; i++) {
+			if (first[i] != sec[i]) {
+				map.put(i, first[i]);
+			}
+		}
+
+		if (map.size() > 2) {
+			return false;
+		} else if (map.size() <= 1) {
+			return true;
+		} else {
+			StringBuilder sb = new StringBuilder(val2);
+			for (Map.Entry m : map.entrySet()) {
+				if (val2.indexOf((char) m.getValue()) != -1) {
+					break;
+				}
+				// sec[(int) m.getKey()] = (char) m.getValue();
+
+				sb.setCharAt((int) m.getKey(), (char) m.getValue());
+			}
+			if (val1.equalsIgnoreCase(sb.toString()))
+				return true;
+			else
+				return false;
+		}
+
 	}
 
 	private static boolean areMetaString(int n, String val1, String val2) {
@@ -98,6 +212,7 @@ public class SwappingPositions {
 
 	}
 
+	// wrong
 	private static boolean areMetaString2(int n, String str1, String str2) {
 		int len1 = str1.length();
 		int len2 = str2.length();
@@ -129,7 +244,7 @@ public class SwappingPositions {
 				sb.setCharAt(i, str1.charAt(i));
 			}
 		}
-		//System.out.println(prev + " - " + curr);
+		// System.out.println(prev + " - " + curr);
 
 		// Check if previous unmatched of string1
 		// is equal to curr unmatched of string2

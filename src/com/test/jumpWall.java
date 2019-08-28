@@ -3,6 +3,12 @@ package com.test;
 import java.io.IOException;
 import java.util.Scanner;
 
+/*Number of jumps for a thief to cross walls
+A thief trying to escape from a jail. He has to cross N walls each with varying heights (every height is greater than 0). 
+He climbs X feet every time. But, due to the slippery nature of those walls, every time he slips back by Y feet. Now the task is 
+to calculate the total number of jumps required to cross all walls and escape from the jail.
+*/
+
 public class jumpWall {
 
 	// Input : heights[] = {11, 11}
@@ -64,8 +70,7 @@ public class jumpWall {
 		int jumps = 0;
 
 		for (int i = 0; i < n; i++) {
-		
-			
+
 			if (height[i] <= x) {
 				jumps++;
 				continue;
@@ -75,8 +80,8 @@ public class jumpWall {
 			 * If height of wall is greater than up move
 			 */
 			int h = height[i];
-			System.out.println(String.valueOf(i) +" : "+ String.valueOf(h) );
-			
+			System.out.println(String.valueOf(i) + " : " + String.valueOf(h));
+
 			while (h > x) {
 				jumps++;
 				h = h - (x - y);

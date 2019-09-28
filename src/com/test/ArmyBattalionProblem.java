@@ -8,9 +8,9 @@ import java.util.Set;
 public class ArmyBattalionProblem {
 
 	public static void main(String[] args) {
-//		String[] input1 = { "1#2", "2#3", "1#11", "3#11", "4#11", "4#5", "5#6", "5#7", "6#7", "4#12", "8#12", "9#12",
-//				"8#10", "9#10", "8#9" };
-		String[] input1 = { "1#2", "1#3", "1#4", "1#5", "2#4", "2#5", "3#4"};
+		String[] input1 = { "1#2", "2#3", "1#11", "3#11", "4#11", "4#5", "5#6", "5#7", "6#7", "4#12", "8#12", "9#12",
+				"8#10", "9#10", "8#9" };
+		//String[] input1 = { "1#2", "1#3", "1#4", "1#5", "2#4", "2#5", "3#4"};
 		int ans = maxno_city(input1);
 		System.out.println(String.valueOf(ans));
 	}

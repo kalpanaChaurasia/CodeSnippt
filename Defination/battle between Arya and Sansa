@@ -1,0 +1,35 @@
+battle between Arya and Sansa 
+It consists of R rounds where in each round a different skill will be put to test. The skill may be Archery, Sword or anything else. After each round, the winner of the round will be awarded a point. After all the R rounds are conducted, the one with maximum points is considered as the overall Winner.Arya is wants not just to win the battle but beat Sansa in such a way that after each round her points are atleast P times the points of Sansa. She wants you to find the number of ways in which she can beat Sansa with the provided condition and take her revenge.
+The order of winning differentiates the different ways. 
+Example: Let's consider, there are 3 rounds.
+Case 1: Arya Sansa Arya
+Case 2:Arya Arya Sansa
+        Both the cases above are different from each other and are considered two different ways. 
+        Note: Since the answer can be large, take modulo by 10^9 + 7.
+
+#Input Format:
+
+The first line of input consists of number of test cases, T
+The only line of each test case consists of two space separated integers R and P.
+Constraints:
+1<= T <=10
+1<= R <=1000 1<= P <=R
+Output Format
+:For each test case, print the number of ways possible in a separate line.
+Sample TestCase 1
+Input
+2
+4 2
+2 2
+Output
+3
+1
+Explanation
+Test Case 1:
+
+Arya Arya Arya Sansa
+Arya Arya Sansa Arya
+Arya Arya Arya Arya
+Test Case 2: 
+Arya Arya
+"""

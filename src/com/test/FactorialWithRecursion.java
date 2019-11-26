@@ -1,6 +1,6 @@
 package com.test;
 
-public class Factorial {
+public class FactorialWithRecursion {
 
 	static int display(int n) {
 		if (n == 0)

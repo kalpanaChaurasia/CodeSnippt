@@ -10,7 +10,7 @@ public class PalindromicWord {
 		Scanner sc = new Scanner(System.in);
 		String str = sc.next(); 
 		int strLen = str.length();
-		sc.close();
+		//sc.close();
 		
 		int fIdx = 0, bIdx = strLen - 1;
 		while (fIdx < bIdx) {

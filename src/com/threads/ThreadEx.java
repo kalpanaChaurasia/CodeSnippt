@@ -1,42 +1,35 @@
 package com.threads;
 
-public class ThreadEx {
 
+
+public class ThreadEx extends Thread {
+
+	public void run() {
+		for (int i = 1; i <= 3; i++) {
+			try {
+				Thread.sleep(10);
+			}catch(Exception e) {
+				System.out.println("hello");
+			}
+			System.out.println(i+" ");
+			
+		}
+	}
+	
 	public static void main(String arg[]) {
 
-		Thread obj1 = new Thread(new Runnable() {
-			@Override
-			public void run() {
-				for (int i = 0; i < 5; i++) {
-					System.out.println("first");
-
-					try {
-						Thread.sleep(500);
-					} catch (InterruptedException e) {
-
-						e.printStackTrace();
-					}
-				}
-			}
-		});
-
-		Thread obj2 = new Thread(new Runnable() {
-			@Override
-			public void run() {
-				for (int i = 0; i < 5; i++) {
-					System.out.println("second");
-
-					try {
-						Thread.sleep(500);
-					} catch (InterruptedException e) {						
-						e.printStackTrace();
-					}
-				}
-			}
-		});
-
-		obj1.start();
-		obj2.start();
+		ThreadEx h1= new ThreadEx();
+		ThreadEx h2= new ThreadEx();
+		
+		h1.start();
+		
+		try {
+			h1.join();
+		}catch(Exception e) {
+			System.out.println("hi");
+		}
+		
+		h2.start();
 	}
 
 }
